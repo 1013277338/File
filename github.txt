@@ -1,0 +1,27 @@
+设置gitHub
+1、生成公钥和私钥()
+$ cd ~/.ssh  
+//这个emai替换成你自己的email  
+$ ssh-keygen -t rsa -C "xxx@gmail.com"  
+这个时候，应该能看到下面的结果  
+$ ls  
+config  id_rsa  id_rsa.pub  known_hosts  
+
+2、点击Account Setting将公钥复制到SSh Key中。
+
+3、在网站上穿件一个repository，克隆到本地。
+   在本地新建一个文件夹，使用git init，生成本地仓库
+   克隆到本地：git clone https://github.com/1013277338/test.git
+   本地添加新文件上传：git add aa.txt
+                       git commit -m "first commit"
+                       git push origin master
+			这里会要求输入用户名和密码：就是你的github账户吗和密码
+
+4、把本地的一个现存的仓库，上传到github中
+			a、首先要在github中建立一个仓库，用于存放上传的代码
+			b、git remote add origin git@github.com:1013277338/local.git
+				或者
+			git remote add origin https://github.com/1013277338/local.git(这种方式，			每次提交时需要输入用户名和密码)
+			c、git push origin master
+5、将github代码更新到本地
+			git pull origin master
